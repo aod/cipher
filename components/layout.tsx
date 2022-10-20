@@ -8,7 +8,7 @@ export default function Layout(props: PropsWithChildren) {
       <section>
         <Header />
       </section>
-      <main className="flex-grow">{props.children}</main>
+      <main className="flex-grow overflow-auto">{props.children}</main>
     </div>
   );
 }
