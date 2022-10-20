@@ -1,3 +1,4 @@
+import Layout from "../components/layout";
 import SyntaxHighlighter from "../components/syntax-highlighter";
 
 const source = `# Welcome to Cipher!
@@ -20,5 +21,9 @@ JSON. Populate the \`source\` field for JSON requests.
 Maximum characters is 4096.`;
 
 export default function Home() {
-  return <SyntaxHighlighter language="markdown" source={source} />;
+  return (
+    <Layout>
+      <SyntaxHighlighter language="markdown" source={source} />
+    </Layout>
+  );
 }
