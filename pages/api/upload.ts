@@ -34,10 +34,6 @@ export default async function Submit(
 }
 
 async function createLink(source: string) {
-  const slug = crypto
-    .createHash("md5")
-    .update("" + Date.now())
-    .digest("hex")
-    .slice(0, 8);
+  const slug = crypto.randomBytes(3).toString("hex");
   return await prisma.link.create({ data: { source, slug } });
 }
