@@ -18,8 +18,8 @@ export default function SyntaxHighlighter(props: SyntaxHighlighterProps) {
   const react = toH(createElement, tree);
 
   return (
-    <div className="font-mono text-xs sm:text-lg lg:text-2xl bg-[#333] h-full text-white overflow-auto">
-      <pre>{react}</pre>
+    <div className="text-xs sm:text-lg lg:text-2xl bg-[#333] h-full text-white overflow-auto">
+      <pre className="font-iosevka">{react}</pre>
     </div>
   );
 }

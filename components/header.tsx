@@ -21,7 +21,7 @@ function CreatedAt(props: { createdAt: Date }) {
   });
 
   return (
-    <div className="font-mono text-xs lg:text-base italic">
+    <div className="text-xs lg:text-base italic">
       <span className="text-white">Created</span>
       &nbsp;
       <span className="text-white">{diff}</span>
