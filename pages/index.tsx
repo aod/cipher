@@ -14,8 +14,8 @@ whatever code is currently in your clipboard.
 
 # Upload
 
-To upload your code snippet simply POST to /api/upload with a text/plain
-content type and include the source in the body.
+Upload your code by making a POST request to /api/upload using plaintext or
+JSON. Populate the \`source\` field for JSON requests.
 
 Maximum characters is 4096.`;
 

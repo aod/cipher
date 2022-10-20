@@ -10,23 +10,34 @@ export default async function Submit(
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
-  if (req.headers["content-type"] !== "text/plain") {
-    return res.status(400).json({ message: "Only text/plain is allowed" });
+
+  let source: string;
+  if (req.headers["content-type"] === "text/plain") {
+    source = req.body;
+  } else if (req.headers["content-type"] === "application/json") {
+    if (!req.body.source) {
+      return res.status(400).json({ message: "Missing source field" });
+    }
+    source = req.body.source;
+  } else {
+    return res.status(400).json({ message: "Content type not supported" });
   }
 
-  const source = req.body;
+  const link = await createLink(source);
+  return res.status(200).json({
+    slug: link.slug,
+    link:
+      process.env.NODE_ENV === "production"
+        ? `https://cipher.yatko.dev/${link.slug}`
+        : `localhost:3000/${link.slug}`,
+  });
+}
+
+async function createLink(source: string) {
   const slug = crypto
     .createHash("md5")
     .update("" + Date.now())
     .digest("hex")
     .slice(0, 8);
-
-  const link = await prisma.link.create({ data: { source, slug } });
-  return res.status(200).json({
-    slug: link.slug,
-    link:
-      process.env.NODE_ENV === "production"
-        ? `https://cipher.yatko.dev/${slug}`
-        : `localhost:3000/${slug}`,
-  });
+  return await prisma.link.create({ data: { source, slug } });
 }
