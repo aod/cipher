@@ -1,10 +1,6 @@
-import { useState } from "react";
-
 import SyntaxHighlighter from "../components/syntax-highlighter";
 
-export default function Home() {
-  const [source, setSource] =
-    useState(String.raw`import { toH } from "hast-to-hyperscript";
+const source = String.raw`import { toH } from "hast-to-hyperscript";
 import { lowlight } from "lowlight";
 import { createElement } from "react";
 
@@ -25,11 +21,8 @@ export default function SyntaxHighlighter(props: SyntaxHighlighterProps) {
       <pre>{react}</pre>
     </div>
   );
-}`);
+}`;
 
-  return (
-    <main>
-      <SyntaxHighlighter source={source} />
-    </main>
-  );
+export default function Home() {
+  return <SyntaxHighlighter source={source} />;
 }
