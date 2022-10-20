@@ -1,28 +1,24 @@
 import SyntaxHighlighter from "../components/syntax-highlighter";
 
-const source = String.raw`import { toH } from "hast-to-hyperscript";
-import { lowlight } from "lowlight";
-import { createElement } from "react";
+const source = `# Welcome to Cipher!
 
-import agate from "../lib/hljs/inline-styles/agate";
-import applyInlineStyles from "../lib/lowlight/ast-transfomers/inline-style";
+Cipher is a **FREE** minimal SaaS for uploading and viewing code snippets.
+It is built with the intention to be used with tools like ShareX to upload
+whatever code is currently in your clipboard.
 
-interface SyntaxHighlighterProps {
-  source: string;
-}
+# Features
 
-export default function SyntaxHighlighter(props: SyntaxHighlighterProps) {
-  const tree = lowlight.highlightAuto(props.source);
-  applyInlineStyles(tree, agate);
-  const react = toH(createElement, tree);
+- URL shortener
+- Automatic syntax highlighting
+- Easy API
 
-  return (
-    <div className="font-mono text-3xl bg-[#333] text-white h-screen">
-      <pre>{react}</pre>
-    </div>
-  );
-}`;
+# Upload
+
+To upload your code snippet simply POST to /api/upload with a text/plain
+content type and include the source in the body.
+
+Maximum characters is 4096.`;
 
 export default function Home() {
-  return <SyntaxHighlighter source={source} />;
+  return <SyntaxHighlighter language="markdown" source={source} />;
 }

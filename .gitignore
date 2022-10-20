@@ -27,6 +27,8 @@ yarn-error.log*
 
 # local env files
 .env*.local
+# Temporary fix since Prisma does not include .env.local but instead .env
+.env
 
 # vercel
 .vercel

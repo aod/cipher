@@ -7,10 +7,13 @@ import applyInlineStyles from "../lib/lowlight/ast-transfomers/inline-style";
 
 interface SyntaxHighlighterProps {
   source: string;
+  language?: string;
 }
 
 export default function SyntaxHighlighter(props: SyntaxHighlighterProps) {
-  const tree = lowlight.highlightAuto(props.source);
+  const tree = props.language?.length
+    ? lowlight.highlight(props.language, props.source)
+    : lowlight.highlightAuto(props.source);
   applyInlineStyles(tree, agate);
   const react = toH(createElement, tree);
 
