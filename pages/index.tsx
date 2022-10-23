@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import Layout from "../components/layout";
 import SyntaxHighlighter from "../components/syntax-highlighter";
 
@@ -22,8 +24,13 @@ Maximum characters is 4096.`;
 
 export default function Home() {
   return (
-    <Layout>
-      <SyntaxHighlighter language="markdown" source={source} />
-    </Layout>
+    <>
+      <Head>
+        <title>Cipher</title>
+      </Head>
+      <Layout>
+        <SyntaxHighlighter language="markdown" source={source} />
+      </Layout>
+    </>
   );
 }

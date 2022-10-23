@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import { Link } from "@prisma/client";
+import Head from "next/head";
 
 import SyntaxHighlighter from "../components/syntax-highlighter";
 import Layout from "../components/layout";
@@ -13,11 +14,16 @@ interface SourcePageProps {
 
 export default function SourcePage(props: SourcePageProps) {
   return (
-    <StaticLinkDataProvider link={props.link}>
-      <Layout>
-        <SyntaxHighlighter source={props.link.source} />
-      </Layout>
-    </StaticLinkDataProvider>
+    <>
+      <Head>
+        <title>#{props.link.slug} - Cipher</title>
+      </Head>
+      <StaticLinkDataProvider link={props.link}>
+        <Layout>
+          <SyntaxHighlighter source={props.link.source} />
+        </Layout>
+      </StaticLinkDataProvider>
+    </>
   );
 }
 
