@@ -32,7 +32,7 @@ export default function Button(props: PropsWithChildren<ButtonProps>) {
     <Wrapper {...wrapperArgs}>
       <Btn
         className={clsx(
-          "group bg-black text-xs lg:text-base text-white border-2 px-5 py-2 lg:py-3 lg:px-7 rounded-full font-semibold tracking-wide focus:bg-white focus:text-black focus:border-black outline-2 focus:outline focus:outline-white h-10 lg:h-12 flex justify-center items-center cursor-pointer focus:z-10",
+          "group bg-black text-xs lg:text-base text-white border-2 border-[#999] px-5 py-2 lg:py-3 lg:px-7 rounded-full font-semibold tracking-wide focus:bg-white focus:text-black focus:border-black outline-2 focus:outline focus:outline-white h-10 lg:h-12 flex justify-center items-center cursor-pointer focus:z-10",
           props.position === "left" &&
             "rounded-r-none pr-2.5 lg:pr-6 relative -right-px focus:right-px",
           props.position === "right" &&

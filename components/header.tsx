@@ -9,7 +9,7 @@ export default function Header() {
   const link = useLinkData();
 
   return (
-    <header className="h-24 lg:h-28 bg-black px-4 lg:px-8 flex justify-between items-center border-b border-white/60">
+    <header className="h-24 lg:h-28 bg-black px-4 lg:px-8 flex justify-between items-center border-b border-[#777]">
       <Link href="/">
         <a className="font-serif text-2xl lg:text-4xl text-white font-bold tracking-wide cursor-pointer">
           <h1>Cipher</h1>
