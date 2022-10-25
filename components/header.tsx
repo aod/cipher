@@ -1,4 +1,5 @@
 import { formatDistanceStrict } from "date-fns";
+import Link from "next/link";
 
 import Upload from "./upload";
 
@@ -9,9 +10,11 @@ export default function Header() {
 
   return (
     <header className="h-24 lg:h-28 bg-black px-4 lg:px-8 flex justify-between items-center border-b border-white/60">
-      <h1 className="font-serif text-2xl lg:text-4xl text-white font-bold tracking-wide">
-        Cipher
-      </h1>
+      <Link href="/">
+        <h1 className="font-serif text-2xl lg:text-4xl text-white font-bold tracking-wide cursor-pointer">
+          Cipher
+        </h1>
+      </Link>
       {link ? <CreatedAt createdAt={link.createdAt} /> : <Upload />}
     </header>
   );
