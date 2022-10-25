@@ -23,7 +23,7 @@ export default async function Submit(
     return res.status(400).json({ message: "Content type not supported" });
   }
 
-  const link = await createLink(source);
+  const link = await createLink(source.trim());
   return res.status(200).json({
     slug: link.slug,
     link:
