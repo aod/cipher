@@ -6,11 +6,13 @@ specifiers:
   '@types/react': 18.0.21
   autoprefixer: ^10.4.12
   babel-plugin-superjson-next: ^0.4.4
+  clsx: ^1.2.1
   date-fns: ^2.29.3
   eslint: 8.25.0
   eslint-config-next: 12.3.1
   hast-to-hyperscript: ^10.0.1
   lowlight: ^2.7.0
+  lucide-react: ^0.94.0
   next: 12.3.1
   postcss: ^8.4.18
   prisma: ^4.5.0
@@ -23,7 +25,9 @@ specifiers:
 dependencies:
   '@prisma/client': 4.5.0_prisma@4.5.0
   babel-plugin-superjson-next: 0.4.4_allwxpau4duvs5vuzsfgla6tpy
+  clsx: 1.2.1
   date-fns: 2.29.3
+  lucide-react: 0.94.0_react@18.2.0
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -631,6 +635,11 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /color-convert/2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -1602,6 +1611,15 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /lucide-react/0.94.0_react@18.2.0:
+    resolution: {integrity: sha512-wDVFhqyVDM2J0gMlKdA08EKzf9Ily3+diKHLcumOHYtp8l5GDDgKqqJuJ8HOOxHprNeTnqJxnHAz7jBFErKc7Q==}
+    peerDependencies:
+      prop-types: ^15.7.2
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}

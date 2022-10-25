@@ -1,6 +1,6 @@
 import { formatDistanceStrict } from "date-fns";
 
-import UploadClipboard from "./upload-clipboard";
+import Upload from "./upload";
 
 import { useLinkData } from "../contexts/link-data";
 
@@ -12,7 +12,7 @@ export default function Header() {
       <h1 className="font-serif text-2xl lg:text-4xl text-white font-bold tracking-wide">
         Cipher
       </h1>
-      {link ? <CreatedAt createdAt={link.createdAt} /> : <UploadClipboard />}
+      {link ? <CreatedAt createdAt={link.createdAt} /> : <Upload />}
     </header>
   );
 }
