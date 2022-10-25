@@ -11,9 +11,9 @@ export default function Header() {
   return (
     <header className="h-24 lg:h-28 bg-black px-4 lg:px-8 flex justify-between items-center border-b border-white/60">
       <Link href="/">
-        <h1 className="font-serif text-2xl lg:text-4xl text-white font-bold tracking-wide cursor-pointer">
-          Cipher
-        </h1>
+        <a className="font-serif text-2xl lg:text-4xl text-white font-bold tracking-wide cursor-pointer">
+          <h1>Cipher</h1>
+        </a>
       </Link>
       {link ? <CreatedAt createdAt={link.createdAt} /> : <Upload />}
     </header>
